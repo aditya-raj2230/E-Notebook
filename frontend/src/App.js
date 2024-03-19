@@ -4,7 +4,7 @@ import React from "react";
 function App() {
   return (
     <div className="App">
-      <div className="text-3xl text-gray-300" ></div>
+      <div className="text-3xl">hello</div>
       hello
     </div>
   );
