@@ -1,10 +1,10 @@
 
 import React from "react";
-import Login from "./components/pages/Login";
+
 function App() {
   return (
-    <div className="App">
-    <Login/>
+    <div className="App h-screen w-screen bg-white dark:bg-black p-10">
+
     </div>
   );
 }
