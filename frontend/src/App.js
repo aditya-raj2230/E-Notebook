@@ -7,6 +7,7 @@ import Signup from "./pages/signup";
 
 
 function App() {
+  
   return (
    
     <div className="App h-screen w-screen bg-white dark:bg-black ">
