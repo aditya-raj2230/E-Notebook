@@ -26,8 +26,8 @@ if(theme==="dark"){
     setTheme(theme==="dark"?"light":"dark")
     }
   return (
-    <div>
-      <button className='bg-black p-4 border-2 border-white rounded-xl text-white dark:bg-white dark:text-black dark:border-white' onClick={darkbtn}>Dark Mode</button>
+    <div >
+      <button className='bg-black p-0 m-2 w-14 border-2 border-white rounded-xl text-white dark:bg-white dark:text-black dark:border-white' onClick={darkbtn}>Dark Mode</button>
     </div>
   )
 }

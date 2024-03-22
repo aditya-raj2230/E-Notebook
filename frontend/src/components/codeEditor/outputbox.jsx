@@ -10,7 +10,7 @@ const OutputBox = ({editorRef,language}) => {
             const{run:result}=await executeCode(language,sourceCode)
             setOutput(result.output)
         }catch(error){
-
+          console.log(error)
         }}
     
   return (
