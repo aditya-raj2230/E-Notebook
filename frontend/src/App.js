@@ -12,7 +12,7 @@ function App() {
   
   return (
    
-    <div className="App h-screen w-screen bg-white dark:bg-black m-0 p-0 ">
+    <div className="App h-screen w-screen  bg-black m-0 p-0 ">
        {/* <BrowserRouter>
       
       <Routes>

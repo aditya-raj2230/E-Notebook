@@ -7,12 +7,12 @@ const Textbox = () => {
 
     const config={
       height:"42rem",
-      width:"62rem"
+      width:"58rem"
     
     }
 
   return (
-    <div className='m-5 w-screen h-screen'>
+    <div className='m-5 ml-2 w-screen h-screen'>
       <JoditEditor config={config}  ref={editor} value={content} onBlur={newContent=>setContent(newContent)} />
      
      

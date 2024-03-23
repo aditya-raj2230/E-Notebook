@@ -35,11 +35,11 @@ const CodeEditor = () => {
   return (
     <div  className=' flex flex-col gap-1 '>
        <div className='w-10 flex flex-row gap-1' >
-      <div className='border-gray-900 border-2 rounded-md pt-0 pb-0 p-1  dark:bg-white bg-black dark:hover:bg-black dark:hover:text-white hover:bg-black hover:text-white' onClick={onSelect1}>
+      <div className='border-gray-900 border-2 rounded-md pt-0 pb-0 p-1   bg-white  hover:bg-black hover:text-white text-black' onClick={onSelect1}>
         {lan[0][0]}
       </div>
-      <div  className='border-gray-900 border-2 rounded-md pt-0 pb-0 p-1  dark:bg-white bg-black dark:hover:bg-black dark:hover:text-white hover:bg-black hover:text-white ' onClick={onSelect2} color={lan[1][0]==="python"?"white":"black"}>{lan[1][0]}</div>
-      <div  className='border-gray-900 border-2 rounded-md pt-0 pb-0 p-1  dark:bg-white bg-black  dark:hover:bg-black dark:hover:text-white hover:bg-black hover:text-white'onClick={onSelect3}>{lan[2][0]}</div>
+      <div  className='border-gray-900 border-2 rounded-md pt-0 pb-0 p-1   bg-white  hover:bg-black hover:text-white text-black' onClick={onSelect2} color={lan[1][0]==="python"?"white":"black"}>{lan[1][0]}</div>
+      <div  className='border-gray-900 border-2 rounded-md pt-0 pb-0 p-1   bg-white  hover:bg-black  hover:text-white text-black 'onClick={onSelect3}>{lan[2][0]}</div>
     </div>
       <div className='h-72 w-96'>
       <Editor height="100%" width="100%" language={language}     defaultValue="//start here" 

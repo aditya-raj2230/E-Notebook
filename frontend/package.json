@@ -13,6 +13,7 @@
     "cors": "^2.8.5",
     "html-react-parser": "^5.1.9",
     "jodit-react": "^4.0.15",
+    "lucide-react": "^0.363.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.5.2",
     "prefixer": "^0.0.3",
