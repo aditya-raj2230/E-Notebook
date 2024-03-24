@@ -56,8 +56,9 @@ const deleteNotebook = async(req,res)=>{
 const updateNotebook = async(req,res)=>{
     const {id} =req.body
     try{
-        const notebook = await Notebook.patch({name})
+        const notebook = await Notebook.patch({id})
         res.status(200).json(notebook)
+        
     }
     catch(error){
         res.status(400).json({error:error.message})
