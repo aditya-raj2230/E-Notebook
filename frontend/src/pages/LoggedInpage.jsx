@@ -12,7 +12,7 @@ const LoggedInpage = () => {
       <Textbox className="fixed" />
       
       <div className='m-5 mb-0 p-0'>
-      <CodeEditor className="fixed"/>
+      {/* <CodeEditor className="fixed"/> */}
       </div>
     </div>
   )

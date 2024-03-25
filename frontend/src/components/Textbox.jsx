@@ -12,7 +12,7 @@ const Textbox = () => {
     }
 
   return (
-    <div className='m-5 ml-2 w-screen h-screen'>
+    <div className='m-2 ml-2 w-screen h-screen'>
       <JoditEditor config={config}  ref={editor} value={content} onBlur={newContent=>setContent(newContent)} />
      
      
