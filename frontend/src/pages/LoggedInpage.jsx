@@ -1,7 +1,7 @@
 import React from 'react'
 import Leftpanel from "../components/Leftpanel";
 import Textbox from '../components/Textbox';
-import CodeEditor from '../components/codeEditor/codeEditor';
+// import CodeEditor from '../components/codeEditor/codeEditor';
 
 const LoggedInpage = () => {
 

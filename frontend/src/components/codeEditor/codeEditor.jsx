@@ -33,7 +33,7 @@ const CodeEditor = () => {
     const languages=Object.entries(LANGUAGE_VERSIONS)
     const lan=Object.values(languages)
   return (
-    <div  className=' flex flex-col gap-1 '>
+    <div  className=' flex flex-col gap-1 p-0'>
        <div className='w-10 flex flex-row gap-1' >
       <div className='border-gray-900 border-2 rounded-md pt-0 pb-0 p-1   bg-white  hover:bg-black hover:text-white text-black' onClick={onSelect1}>
         {lan[0][0]}

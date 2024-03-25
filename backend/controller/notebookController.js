@@ -3,14 +3,14 @@ const mongoose =require('mongoose')
 
 // get all notebook
 const getNotebook = async(req,res)=>{
-    
-    try{
-        const notebook = await Notebook.find({}).sort({createdAt:-1})//rand last to first
-        res.status(200).json(notebook)
+    const {name}= req.body
+   
+    const notebook = await Notebook.find({}).sort({createdAt:-1})//rand last to first
+    res.status(200).json(notebook)
+    if(!notebook){
+        return res.status(404).json({error:'no such  notebook'}) 
     }
-    catch(error){
-        res.status(400).json({error:error.message})
-    }
+  
 }
 
 
