@@ -7,6 +7,7 @@ const Leftpanel = () => {
   const [expand,setExpand]=useState(false)
   const [error,setError]=useState()
   const [notebooks,setNotebooks]=useState(null)
+  const [name,setName]=useState('')
 
   
   useEffect(()=>{
@@ -17,15 +18,14 @@ const Leftpanel = () => {
     if(response.ok){
       setNotebooks(json)
     }
-
     }
     fetchNotebook()
   },[])
 
-  const [name,setName]= useState('')
+
 
   const handlebtnChange=async(e)=>{
-    ()=>setExpand((curr)=>!curr)
+    setExpand((curr)=>!curr)
     e.preventDefault()
 
     const notebook = {name}
@@ -33,7 +33,7 @@ const Leftpanel = () => {
       method:'POST',
       body:JSON.stringify(notebook),
       headers:{
-        'Content-type':'notebook form'
+        'Content-type':'application/json'
       }
     })
     const json = await response.json()
@@ -61,8 +61,8 @@ const Leftpanel = () => {
 
         <div className='flex flex-row fixed top-70 left-2'>
           <input type="text" className='text-black border-2 w-40 border-black'placeholder='add notebook' id="" onClick={()=>setExpand((curr)=>!curr)} onChange={(e)=>setName(e.target.value)} value={name}/>
-          <button onClick={handlebtnChange} className='border-2 h-6 m-1 border-white '>+
-          </button>
+          <submit  onClick={handlebtnChange} className='border-2 h-6 m-1 border-white '>+
+          </submit>
           </div>
 
 
