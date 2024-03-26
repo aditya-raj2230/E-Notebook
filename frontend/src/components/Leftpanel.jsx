@@ -5,6 +5,7 @@ import profileImg from '../pages/images/profileImg.png'
 
 const Leftpanel = () => {
   const [expand,setExpand]=useState(false)
+  const [error,setError]=useState()
   const [notebooks,setNotebooks]=useState(null)
 
   
@@ -21,6 +22,30 @@ const Leftpanel = () => {
     fetchNotebook()
   },[])
 
+  const [name,setName]= useState('')
+
+  const handlebtnChange=async(e)=>{
+    ()=>setExpand((curr)=>!curr)
+    e.preventDefault()
+
+    const notebook = {name}
+    const response = await fetch('api/notebook',{
+      method:'POST',
+      body:JSON.stringify(notebook),
+      headers:{
+        'Content-type':'notebook form'
+      }
+    })
+    const json = await response.json()
+    if(!response.ok){
+      setError(json.error)
+    }
+    if(response.ok){
+      setError(null)
+      setName('')
+      console.log('new notebook added',json)
+    }
+  }
 
 
   return (
@@ -30,9 +55,13 @@ const Leftpanel = () => {
       <button onClick={()=>setExpand((curr)=>!curr)}>{expand?<div className='text-white'>
         <h2 className='text-white align m-0 pb-14 h-2 bg-yellow hover:text-yellow-700 text-6xl'>&lt;</h2> 
         <br />
+
+
+
+
         <div className='flex flex-row fixed top-70 left-2'>
-          <input type="text" className='text-black border-2 w-40 border-black'placeholder='add notebook' name="" id="" onClick={()=>setExpand((curr)=>!curr)}/>
-          <button onClick={()=>setExpand((curr)=>!curr)} className='border-2 h-6 m-1 border-white '>+
+          <input type="text" className='text-black border-2 w-40 border-black'placeholder='add notebook' id="" onClick={()=>setExpand((curr)=>!curr)} onChange={(e)=>setName(e.target.value)} value={name}/>
+          <button onClick={handlebtnChange} className='border-2 h-6 m-1 border-white '>+
           </button>
           </div>
 
