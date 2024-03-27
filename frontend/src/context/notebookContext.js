@@ -13,6 +13,12 @@ export const notebookReducer=(state,action)=>{
                 return{
             notebooks:[action.payload,...state.notebooks]
         }
+        case 'DELETE_NOTEBOOK':
+            return{
+                notebooks:state.notebooks.filter((w)=>
+                    w._id !== action.payload._id
+                )
+            }
         default:
             return state
     }
