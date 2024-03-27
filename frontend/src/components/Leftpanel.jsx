@@ -1,13 +1,18 @@
 import React, { useState ,useEffect} from 'react'
-
+import { useNotebookContext } from '../hooks/useNotebookContext'
 import pageBtnImg from '../pages/images/pageBtnImg.png'
 import profileImg from '../pages/images/profileImg.png'
 
 const Leftpanel = () => {
   const [expand,setExpand]=useState(false)
   const [error,setError]=useState()
-  const [notebooks,setNotebooks]=useState(null)
+
   const [name,setName]=useState('')
+
+  const {notebooks,dispatch}=useNotebookContext()
+
+
+
 
   
   useEffect(()=>{
@@ -16,8 +21,8 @@ const Leftpanel = () => {
     const json= await response.json()
 
     if(response.ok){
-      setNotebooks(json)
-    }
+        dispatch({type:'SET_NOTEBOOK',payload:json })  }
+
     }
     fetchNotebook()
   },[])
@@ -43,6 +48,7 @@ const Leftpanel = () => {
     if(response.ok){
       setError(null)
       setName('')
+      dispatch({type:'CREATE_NOTEBOOK',payload:json})
       console.log('new notebook added',json)
     }
   }
