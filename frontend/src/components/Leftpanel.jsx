@@ -19,25 +19,33 @@ const Leftpanel = () => {
     const fetchNotebook=async()=>{
     const response = await fetch('/api/notebook')
     const json= await response.json()
+    
 
     if(response.ok){
         dispatch({type:'SET_NOTEBOOK',payload:json })  }
-
     }
     fetchNotebook()
-  },[])
+  },[dispatch])
 
+ 
+  
   const ondeletehandle=async()=>{
     setExpand((curr)=>!curr)
-    const response=await fetch('/api/noebook/'+notebooks._id,{
+    const response=await fetch('/api/notebook/'+notebooks._id,{
       method:'DELETE'
+      
     })
     const json =await response.json()
 
-    if(!response.ok ){
+    if(response.ok ){
       dispatch({type:'DELETE_NOTEBOOK',payload:json})
+      console.log(notebooks)
+    }
+    if(!response.ok){
+      console.log("error")
     }
   }
+
 
 
 
@@ -90,7 +98,7 @@ const Leftpanel = () => {
 
           <div className='fixed top-32 m-2 left-3 flex flex-col text-white'>
             {notebooks && notebooks.map((notebook)=>(
-              <p  className ='flex flex-row justify-between' key={notebook._id}>{notebook.name}<button onClick={ondeletehandle} className='ml-10 hover:bg-white hover:text-black'>X</button></p>
+              <p  className ='flex flex-row justify-between' key={notebook._id}>{notebook.name}<span onClick={ondeletehandle} className='ml-10 hover:bg-white hover:text-black'>X</span></p>
             ))}
           </div>
 

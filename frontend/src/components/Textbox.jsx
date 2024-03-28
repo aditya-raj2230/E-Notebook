@@ -14,6 +14,7 @@ const Textbox = () => {
   return (
     <div className='mt-5 ml-3 mr-0 w-screen h-screen'>
       <JoditEditor config={config}  ref={editor} value={content} onBlur={newContent=>setContent(newContent)} />
+      <div>{console.log(content)}</div>
      
      
     </div>
