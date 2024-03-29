@@ -1,7 +1,7 @@
 import React from 'react'
 import Leftpanel from "../components/Leftpanel";
 import Textbox from '../components/Textbox';
-// import CodeEditor from '../components/codeEditor/codeEditor';
+import CodeEditor from '../components/codeEditor/codeEditor';
 
 const LoggedInpage = () => {
 
@@ -12,7 +12,7 @@ const LoggedInpage = () => {
       <Textbox className="fixed" />
       
       <div className='m-5 mb-0 p-0'>
-      {/* <CodeEditor className="fixed"/> */}
+      <CodeEditor className="fixed"/>
       </div>
     </div>
   )

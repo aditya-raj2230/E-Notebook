@@ -1,10 +1,10 @@
 
 import React from "react";
-// import Home from './pages/Home'
-// import {Routes,Route, BrowserRouter} from 'react-router-dom'
-// import Login from './pages/Login'
-// import Signup from "./pages/signup";
-import LoggedInpage from "./pages/LoggedInpage";
+import Home from './pages/Home'
+import {Routes,Route, BrowserRouter} from 'react-router-dom'
+import Login from './pages/Login'
+import Signup from "./pages/signup";
+// import LoggedInpage from "./pages/LoggedInpage";
 
 
 
@@ -13,7 +13,7 @@ function App() {
   return (
    
     <div className="App h-screen w-screen  bg-black m-0 p-0 ">
-       {/* <BrowserRouter>
+       <BrowserRouter>
       
       <Routes>
         <Route path="/login" exact element={<Login/>}>
@@ -24,8 +24,9 @@ function App() {
       </Routes>
      
 
-      </BrowserRouter> */}
-     <LoggedInpage/>
+      </BrowserRouter>
+     {/* <LoggedInpage/> */}
+     <Home/>
     </div>
   );
 }

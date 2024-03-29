@@ -1,7 +1,17 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Loginrightimage from '../pages/images/Loginrightimage-removebg-preview.png'
 import textimage from '../pages/images/logo-removebg-preview.png'
 const Signup = () => {
+  const [email,setEmail]=useState('')
+  const [password,setpassword]=useState('')
+  const [firstName,setfirstName]=useState('')
+  const [lastName,setlastName]=useState('')
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault()
+    console.log(email,password)
+  }
+
   return (
     <div className="bg-gradient-to-r from-black via-gray-700 to-gray-400 grid place-content-center min-h-screen h-screen" >
       <div className="flex flex-row gap-20 bg-gradient-to-l from-black via-gray-900 to-gray-400 border-1 border-gray-900 rounded-3xl p-12 shadow-2xl" >
@@ -13,25 +23,25 @@ const Signup = () => {
             <label>
             <div className='mb-5 font-bold'>
                 <div>First Name</div>
-                <input type="text" className='rounded-xl font-mono text-gray-900 p-0.5' />
+                <input type="text" className='rounded-xl font-mono text-gray-900 p-0.5' onChange={(e)=>setfirstName(e.target.value)} value={firstName}/>
             </div></label>
             <label>
             <div className='mb-5 font-bold'>
                 <div>Last Name</div>
-                <input type="text" className='rounded-xl font-mono text-gray-900 p-0.5' />
+                <input type="text" className='rounded-xl font-mono text-gray-900 p-0.5'onChange={(e)=>setlastName(e.target.value)} value={lastName} />
             </div></label>
             <label>
             <div className='mb-5 font-bold'>
                 <div>Email Address</div>
-                <input type="text" className='rounded-xl font-mono text-gray-900 p-0.5' />
+                <input type="email" className='rounded-xl font-mono text-gray-900 p-0.5' onChange={(e)=>setEmail(e.target.value)} value={email} />
             </div></label>
             <div className='mb-5 '>
               <label>
                 <div className='font-bold'>Password</div>
-                <input type="password"  className='rounded-xl font-mono text-gray-900 p-0.5'/>
+                <input type="password"  className='rounded-xl font-mono text-gray-900 p-0.5'onChange={(e)=>setpassword(e.target.value)} value={password}/>
                 </label>
             </div>
-            <div className="loginbtn"><button className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl'>Sign Up</button></div>
+            <div className="loginbtn"><button className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl' onClick={handleSubmit}>Sign Up</button></div>
         </div>
         <div className='right'>
             <img src={Loginrightimage} alt="" className="max-h-96" />
