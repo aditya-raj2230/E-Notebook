@@ -1,15 +1,20 @@
 import React,{useState} from 'react'
 import Loginrightimage from '../pages/images/Loginrightimage-removebg-preview.png'
 import textimage from '../pages/images/logo-removebg-preview.png'
+import { useSignup } from '../hooks/useSignup'
+
+
 const Signup = () => {
   const [email,setEmail]=useState('')
   const [password,setpassword]=useState('')
   const [firstName,setfirstName]=useState('')
   const [lastName,setlastName]=useState('')
+  const {signup,error,isLoading}=useSignup()
 
   const handleSubmit=async(e)=>{
     e.preventDefault()
-    console.log(email,password)
+
+    await signup(email,password,firstName,lastName)
   }
 
   return (
@@ -41,7 +46,8 @@ const Signup = () => {
                 <input type="password"  className='rounded-xl font-mono text-gray-900 p-0.5'onChange={(e)=>setpassword(e.target.value)} value={password}/>
                 </label>
             </div>
-            <div className="loginbtn"><button className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl' onClick={handleSubmit}>Sign Up</button></div>
+            <div className="loginbtn"><button  disabled={isLoading} className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl' onClick={handleSubmit}>Sign Up</button></div>
+            {error && <div className='error'>{error}</div>}
         </div>
         <div className='right'>
             <img src={Loginrightimage} alt="" className="max-h-96" />

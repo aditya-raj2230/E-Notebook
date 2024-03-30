@@ -17,16 +17,17 @@ function App() {
       
       <Routes>
         <Route path="/login" exact element={<Login/>}>
-          Login
         </Route>
-        <Route path="/signup" exact element={<Signup/>}>Signup</Route>
+        <Route path="/signup" exact element={<Signup/>}></Route>
         <Route path="/" exact element={<Home/>}></Route>
       </Routes>
      
+      <Home/>
 
       </BrowserRouter>
+      
      {/* <LoggedInpage/> */}
-     <Home/>
+    
     </div>
   );
 }

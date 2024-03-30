@@ -6,6 +6,12 @@ const Login = () => {
   const [email,setEmail]=useState('')
   const [password,setpassword]=useState('')
 
+  
+  const handleSubmit=async(e)=>{
+    e.preventDefault()
+    console.log(email,password)
+  }
+
   return (
     <div className="bg-gradient-to-r from-black via-gray-700 to-gray-400 grid place-content-center min-h-screen h-screen" >
       <div className="flex flex-row gap-20 bg-gradient-to-l from-black via-gray-900 to-gray-400 border-1 border-gray-900 rounded-3xl p-12 shadow-2xl" >
@@ -27,7 +33,7 @@ const Login = () => {
                 <div className="forgetpassword text-sm">Forgot Password?</div>
             </div>
             <div className="rememberme"><input type="checkbox"/>Remember me</div>
-            <div className="loginbtn"><button className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl'>LOGIN</button></div>
+            <div className="loginbtn"><button className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl' onClick={handleSubmit} >LOGIN</button></div>
         </div>
         <div className='right'>
             <img src={Loginrightimage} alt="" className="max-h-96" />
