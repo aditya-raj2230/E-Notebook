@@ -14,7 +14,7 @@ const Signup = () => {
 
   return (
     <div className="bg-gradient-to-r from-black via-gray-700 to-gray-400 grid place-content-center min-h-screen h-screen" >
-      <div className="flex flex-row gap-20 bg-gradient-to-l from-black via-gray-900 to-gray-400 border-1 border-gray-900 rounded-3xl p-12 shadow-2xl" >
+      <div className="flex flex-row gap-20 bg-gradient-to-l from-black via-gray-800 to-gray-400 border-1 border-gray-900 rounded-3xl p-12 shadow-2xl" >
         <div className='left font-mono text-white text-xl'>
             <div className=' mb-16'>
             <div className='text-7xl font-mono font-extrabold' >Register</div>
