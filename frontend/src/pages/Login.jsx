@@ -36,7 +36,7 @@ const Login = () => {
                 <div className="forgetpassword text-sm">Forgot Password?</div>
             </div>
             <div className="rememberme"><input type="checkbox"/>Remember me</div>
-            <div className="loginbtn"><button className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl' onClick={handleSubmit} >LOGIN</button></div>
+            <div className="loginbtn"><Link to='/'><button className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl' onClick={handleSubmit} >LOGIN</button></Link></div>
         </div>
         <div className='right'>
             <img src={Loginrightimage} alt="" className="max-h-96" />

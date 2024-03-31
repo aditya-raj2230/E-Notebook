@@ -23,6 +23,10 @@ const userSchema = new Schema({
         type:String,
         requird:true,
     },
+    user_id:{
+        type:String,
+        required:true
+    }
 })
 
 // static signup method

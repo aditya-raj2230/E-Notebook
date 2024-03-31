@@ -15,6 +15,7 @@ const Signup = () => {
     e.preventDefault()
 
     await signup(email,password,firstName,lastName)
+    console.log(email)
   }
 
   return (
@@ -46,7 +47,7 @@ const Signup = () => {
                 <input type="password"  className='rounded-xl font-mono text-gray-900 p-0.5'onChange={(e)=>setpassword(e.target.value)} value={password}/>
                 </label>
             </div>
-            <div className="loginbtn"><button  disabled={isLoading} className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl' onClick={handleSubmit}>Sign Up</button></div>
+            <div className="loginbtn"><button  className='bg-white text-gray-900 hover:bg-gray-900 hover:text-white pr-2 pl-2 rounded-2xl' onClick={handleSubmit}>Sign Up</button></div>
             {error && <div className='error'>{error}</div>}
         </div>
         <div className='right'>

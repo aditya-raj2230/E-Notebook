@@ -1,8 +1,10 @@
 import React, { useState ,useEffect} from 'react'
 import { useNotebookContext } from '../hooks/useNotebookContext'
 import pageBtnImg from '../pages/images/pageBtnImg.png'
-
+import { useAuthContext } from '../hooks/useAuthContext'
 import { Link } from 'react-router-dom'
+import { useLogout } from '../hooks/useLogout'
+
 
 const Leftpanel = () => {
   const [expand,setExpand]=useState(false)
@@ -13,8 +15,12 @@ const Leftpanel = () => {
   const {notebooks,dispatch}=useNotebookContext()
 
   const [ profile,setProfile]=useState(false);
+  const {user}=useAuthContext()
+  const {logout}=useLogout()
 
-
+const handleClick=()=>{
+  logout()
+}
 
 
   
@@ -117,13 +123,20 @@ const Leftpanel = () => {
           <img src={pageBtnImg}  alt=""  className={``} />}
           </button>
       </div>
-      
+
+     {!user && ( 
+     <div>
       {expand?  
    <div className='text-white fixed bottom-10 '>
    
    <Link to="/login"><button className={`m-5 border-2 border-white rounded-lg p-2`}>Login</button></Link>
    <Link to="/signup"><button className={` border-2 border-white rounded-lg p-2`}>Signup</button></Link>
-   </div>:""}
+   </div>:""}</div>)}
+
+  {user &&(  <div className='text-white'>
+    <span>{user.email}</span>
+    <button onClick={handleClick}>Logout</button>
+   </div>)}
     </div>
   )
 }

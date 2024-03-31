@@ -1,8 +1,11 @@
 const express = require('express')
 const {createNotebook,getNotebook,getOneNotebook, updateNotebook, deleteNotebook}=require('../controller/notebookController')
 
+const requireAuth = require('../middlewares/requireAuth') 
 
 const router = express.Router()
+//require auth for user
+router.use(requireAuth)
 
 //get all notebook
 router.get('/',getNotebook)
