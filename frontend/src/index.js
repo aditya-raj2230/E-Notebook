@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
     <AuthContextProvider>
     <NotebookContextProvider>
-    <App />
+    <App/>
     </NotebookContextProvider>
     </AuthContextProvider>
   </React.StrictMode>

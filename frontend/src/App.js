@@ -1,9 +1,10 @@
 
 import React from "react";
-import Home from './pages/Home'
+
 import {Routes,Route, BrowserRouter} from 'react-router-dom'
 import Login from './pages/Login'
 import Signup from "./pages/signup";
+import LoggedInpage from "./pages/LoggedInpage";
 // import LoggedInpage from "./pages/LoggedInpage";
 
 
@@ -19,10 +20,10 @@ function App() {
         <Route path="/login" exact element={<Login/>}>
         </Route>
         <Route path="/signup" exact element={<Signup/>}></Route>
-        <Route path="/" exact element={<Home/>}></Route>
+        
       </Routes>
      
-      <Home/>
+      <LoggedInpage/>
 
       </BrowserRouter>
       

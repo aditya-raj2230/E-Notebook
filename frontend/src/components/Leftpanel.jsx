@@ -1,7 +1,8 @@
 import React, { useState ,useEffect} from 'react'
 import { useNotebookContext } from '../hooks/useNotebookContext'
 import pageBtnImg from '../pages/images/pageBtnImg.png'
-import profileImg from '../pages/images/profileImg.png'
+
+import { Link } from 'react-router-dom'
 
 const Leftpanel = () => {
   const [expand,setExpand]=useState(false)
@@ -10,6 +11,8 @@ const Leftpanel = () => {
   const [name,setName]=useState('')
 
   const {notebooks,dispatch}=useNotebookContext()
+
+  const [ profile,setProfile]=useState(false);
 
 
 
@@ -74,9 +77,13 @@ const Leftpanel = () => {
     }
   }
 
+  const profilehandle =()=>{
+    setProfile((curr)=>!curr)
+  }
+
 
   return (
-    <div className={`h-screen w-20 m-4 bg-black ${expand?"w-96":"w-20"} `} >
+    <div className={`h-screen w-20 m-4 flex flex-col bg-black ${expand?"w-96":"w-20"} ${profile?"w-96 border-2 border-white" :"w-20 " } `} >
       <div className={`${expand?"h-screen" &&"w-40":"h-20"} flex `}>
         {expand?<h2 className='text-yellow-700 m-2 mt-6 text-3xl font-mono text-yel'>CODEMATE</h2>:""}
       <button onClick={()=>setExpand((curr)=>!curr)}>{expand?<div className='text-white'>
@@ -107,12 +114,16 @@ const Leftpanel = () => {
 
 
           </div>:
-          <img src={pageBtnImg} alt="" className='' />}
+          <img src={pageBtnImg}  alt=""  className={``} />}
           </button>
       </div>
       
-      
-      <div className='fixed top-3/4'><button className='w-16 m-1 mt-24'><img src={profileImg} alt="" /></button></div>
+      {expand?  
+   <div className='text-white fixed bottom-10 '>
+   
+   <Link to="/login"><button className={`m-5 border-2 border-white rounded-lg p-2`}>Login</button></Link>
+   <Link to="/signup"><button className={` border-2 border-white rounded-lg p-2`}>Signup</button></Link>
+   </div>:""}
     </div>
   )
 }
