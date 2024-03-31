@@ -2,14 +2,17 @@ import React,{useState} from 'react'
 import Loginrightimage from '../pages/images/Loginrightimage-removebg-preview.png'
 import textimage from '../pages/images/logo-removebg-preview.png'
 import { Link } from 'react-router-dom'
+import { useLogin } from '../hooks/useLogin'
+
 const Login = () => {
   const [email,setEmail]=useState('')
   const [password,setpassword]=useState('')
+  const {login}=useLogin()
 
   
   const handleSubmit=async(e)=>{
     e.preventDefault()
-    console.log(email,password)
+    await login(email,password)
   }
 
   return (
