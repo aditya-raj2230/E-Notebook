@@ -33,5 +33,5 @@ export const useSignup=()=>{
         }
 
     }
-    return(signup,IsLoading,error)
+    return{signup,IsLoading,error}
 }
