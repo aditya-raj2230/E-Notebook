@@ -134,8 +134,8 @@ const handleClick=()=>{
    </div>:""}</div>)}
 
   {user &&(  <div className='text-white'>
-    <span>{user.email}</span>
-    <button onClick={handleClick}>Logout</button>
+    <span className='fixed bottom-16' >{user.email}</span>
+    <button className='fixed bottom-6 border-2 text-white border-white hover:bg-white hover:text-black rounded-3xl p-2 pt-0 pb-0' onClick={handleClick}>Logout</button>
    </div>)}
     </div>
   )
